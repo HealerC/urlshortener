@@ -2,6 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 // Basic Configuration
 const port = process.env.PORT || 3000;
@@ -18,6 +21,13 @@ app.get('/', function(req, res) {
 app.get('/api/hello', function(req, res) {
   res.json({ greeting: 'hello API' });
 });
+
+//APP
+
+
+
+
+
 
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
