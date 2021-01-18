@@ -114,6 +114,16 @@ app.get('/api/shorturl/:short', function(req, res) {
 	});
 });
 
+/* Make a way for the client to get all URL's and short URL's and display it 
+on the client-side */
+app.get('/api/shorturl/all', function(req, res) {
+	URLModel.find({}).select({url: 1, shortURL: 1})
+			.exec(function(err, documents) {
+				res.json(documents);
+			});
+});
+
+
 /* Check the database for a URL. If none found, Add it. If found, add new properties
 to the request object that will be sent in the handler function */
 function checkDatabase(url, req, next) {
