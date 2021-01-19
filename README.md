@@ -7,3 +7,5 @@ it is added to the database and it also responds with JSON that has the shorturl
 
 If the api endpoint /api/shorturl/:short-url (with "short:url" representing the short url number) is requested,
 the client is redirected to the url it corresponds to.
+
+**Bonus:** It shows all the URLs as well as their respective short-url numbers at homepage
