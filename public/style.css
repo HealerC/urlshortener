@@ -44,6 +44,8 @@ input[type='text'] {
   width: 220px;
   text-align: center;
 }
+
+/* Table */
 table, tr, th, td {
   border: 1px solid black;
   border-collapse: collapse;
@@ -51,4 +53,11 @@ table, tr, th, td {
 }
 th, td {
   padding: .3em;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+p {
+  margin-top: 0.5em;
 }

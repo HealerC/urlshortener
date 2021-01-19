@@ -22,7 +22,7 @@ function createTable(data) {
 	urlHeader.appendChild(document.createTextNode("URL"));
 
 	const shortHeader = document.createElement("th");
-	shortHeader.appendChild(document.createTextNode("Short URL"));
+	shortHeader.appendChild(document.createTextNode("short-url"));
 
 	console.log(urlHeader);
 	console.log(shortHeader);
@@ -36,8 +36,12 @@ function createTable(data) {
 		let urlData = document.createElement("td");
 		urlData.appendChild(document.createTextNode(data[eachData].url));
 
-		let shortURLData = document.createElement("td")
-		shortURLData.appendChild(document.createTextNode(data[eachData].shortURL));
+		let shortURLData = document.createElement("td");
+		let shortLink = document.createElement("a");
+		shortLink.target = "_blank";
+		shortLink.href= "/api/shorturl/" + data[eachData].shortURL;
+		shortLink.appendChild(document.createTextNode(data[eachData].shortURL));
+		shortURLData.appendChild(shortLink);
 
 		row.appendChild(urlData);
 		row.appendChild(shortURLData);
